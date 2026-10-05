@@ -1,0 +1,21 @@
+* { box-sizing: border-box; }
+
+html { min-width: 320px; scroll-behavior: smooth; }
+
+body {
+  min-width: 320px;
+  margin: 0;
+  font-family: 'DM Sans', sans-serif;
+  color: #f3f1e9;
+  background: #0b0d0b;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root { min-height: 100vh; }
+
+:focus-visible { outline: 2px solid #114433; outline-offset: 3px; }
+
+::selection { color: #0b3024; background: #c5a24e; }
