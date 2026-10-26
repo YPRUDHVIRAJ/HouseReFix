@@ -2,6 +2,10 @@
 
 A responsive React and TypeScript website for HouseReFix cleaning services in Madanapalle. The booking form opens WhatsApp with the customer's booking details prefilled to the HouseReFix business number.
 
+## Cleaning service pages
+
+Select **Our services** in the site navigation to browse the service directory. Each service has its own page under `/services/`, with details and a booking link that preselects that service in the booking form. The `/services` directory and service routes are rewritten to the Vite app entry point by Vercel so direct visits and page refreshes work.
+
 ## Local development
 
 For the frontend only:
@@ -11,7 +15,7 @@ npm install
 npm run dev
 ```
 
-When a visitor submits the form, WhatsApp opens to HouseReFix at `+91 9492507909` with the name, contact details, chosen service, date, and notes in a draft message. The visitor must tap **Send** in WhatsApp to deliver it. No SMS API key or backend is required. The number is configured in the `wa.me` link in `src/App.tsx`.
+The booking form collects a name, phone number, service, area/locality, preferred date and time, and optional service details. Submitting opens WhatsApp to HouseReFix at `+91 9492507909` with those details in a draft message; the visitor must tap **Send** in WhatsApp to deliver it. Visitors can also call or message the number directly. The homepage includes FAQs about service areas, scope, preparation, booking, pricing, and payment. No SMS API key or backend is required. The WhatsApp number is configured in `src/App.tsx`.
 
 ## Checks
 
