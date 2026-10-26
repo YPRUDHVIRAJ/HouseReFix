@@ -33,6 +33,25 @@ const bathroomBeforeAfterPhotos = Array.from({ length: 7 }, (_, index) => ({
   alt: `Bathroom before and after cleaning by the HouseReFix team, example ${index + 1}`,
 }))
 
+const recentWorkVideos = [
+  '1025 (1).mp4',
+  '1021.mp4',
+  '1020(1).mp4',
+  '1018(1).mp4',
+  '1016.mp4',
+  '1014(1).mp4',
+  '1012(1).mp4',
+  '1011.mp4',
+  '1007.mp4',
+  '1006.mp4',
+  '1005.mp4',
+  '1004.mp4',
+  '0929.mp4',
+  '0926.mp4',
+  '0923.mp4',
+  '0909.mp4',
+]
+
 function bookingUrl(service?: string) {
   const query = service ? `?service=${encodeURIComponent(service)}` : ''
   return `/${query}#booking`
@@ -55,6 +74,7 @@ function SiteHeader() {
             </div>
           </div>
           <a className="nav-secondary" href="/#promise">Why HouseRefix</a>
+          <a className="nav-secondary" href="/#videos">Videos</a>
           <a className="nav-secondary" href="/#booking">Get in touch</a>
         </nav>
         <a className="header-cta" href="/#booking">Book a Cleaning <span aria-hidden="true">↗</span></a>
@@ -72,6 +92,7 @@ function SiteFooter({ bookingHref }: { bookingHref: string }) {
         <a href="/">Home</a>
         <a href="/services">Our services</a>
         <a href="/#promise">Why HouseRefix</a>
+        <a href="/#videos">Videos</a>
         <a href="/#faqs">FAQs</a>
         <a href="/#booking">Get in touch</a>
       </nav>
@@ -204,6 +225,38 @@ function HomePage() {
           </div>
           <div className="service-grid">
             {services.map((service, index) => <article className="service-item" key={service.slug}><div className="service-image service-image-square"><img src={service.image} alt={`${service.title} service`} /></div><span className="service-number">{String(index + 1).padStart(2, '0')}</span><span className="service-icon" aria-hidden="true">{service.icon}</span><h3>{service.title}</h3><p>{service.description}</p><a href={`/services/${service.slug}`}>View service <span aria-hidden="true">↗</span></a></article>)}
+          </div>
+        </section>
+
+        <section className="work-videos-section" id="videos" aria-labelledby="work-videos-title">
+          <div className="bathroom-gallery-heading">
+            <div>
+              <div className="eyebrow">RECENT WORK BY OUR TEAM</div>
+              <h2 id="work-videos-title">HouseReFix Videos</h2>
+            </div>
+            <div className="work-videos-intro">
+              <p>Watch videos of our recent cleaning work and follow HouseReFix on Instagram.</p>
+              <a className="work-instagram-link" href="https://www.instagram.com/houserefix_madanapalle?obrf=MXVia2UyYzhmbnpyZw==" target="_blank" rel="noopener noreferrer">Visit our Instagram <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+          <div className="work-video-viewport" role="region" aria-label="Recent HouseReFix cleaning videos" tabIndex={0}>
+            <div className="work-video-track">
+              {recentWorkVideos.map((filename, index) => (
+                <figure className="work-video-card" key={filename}>
+                  <video
+                    controls
+                    playsInline
+                    preload="none"
+                    poster={`/ads%20video/posters/${encodeURIComponent(filename.replace(/\.mp4$/i, '.jpg'))}`}
+                    aria-label={`HouseReFix recent cleaning work video ${index + 1}`}
+                  >
+                    <source src={`/ads%20video/${encodeURIComponent(filename)}`} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                  <figcaption>Recent work · {String(index + 1).padStart(2, '0')}</figcaption>
+                </figure>
+              ))}
+            </div>
           </div>
         </section>
 

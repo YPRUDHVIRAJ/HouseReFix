@@ -6,6 +6,10 @@ A responsive React and TypeScript website for HouseReFix cleaning services in Ma
 
 Select **Our services** in the site navigation to browse the service directory. Each service has its own page under `/services/`, with details and a booking link that preselects that service in the booking form. The `/services` directory and service routes are rewritten to the Vite app entry point by Vercel so direct visits and page refreshes work.
 
+## Recent work videos
+
+The homepage **Videos** section presents recent cleaning-work clips in a horizontally scrollable flex gallery. Videos are user-initiated and use `preload="none"` so they do not download until a visitor chooses to play them. Keep optimized MP4s in `public/ads video/`; preserve large camera originals outside `public` so they are not included in website deployments. The section also links to the HouseReFix Instagram page.
+
 ## Local development
 
 For the frontend only:

@@ -109,6 +109,17 @@ h1 em, h2 em { color: var(--green); font-weight: 500; }
 .bathroom-gallery-card img { display: block; width: 100%; height: 100%; object-fit: cover; }
 @keyframes bathroom-gallery-scroll { to { transform: translateX(-50%); } }
 
+.work-videos-section { overflow: hidden; padding: 82px 0 88px; background: #111511; }
+.work-videos-intro { display: grid; justify-items: start; gap: 12px; }
+.work-videos-intro p { max-width: 340px; margin: 0; color: #b1b7b0; font-size: 12px; line-height: 1.8; }
+.work-instagram-link { display: inline-flex; align-items: center; gap: 8px; padding: 10px 13px; border: 1px solid #c5a24e; color: #f1d17e; font-size: 10px; font-weight: 700; }
+.work-instagram-link:hover { background: #1b3829; }
+.work-video-viewport { overflow-x: auto; overscroll-behavior-inline: contain; scroll-snap-type: x mandatory; scrollbar-color: #59654f #151915; scrollbar-width: thin; }
+.work-video-track { display: flex; width: max-content; gap: 18px; padding: 0 24px 14px; }
+.work-video-card { width: clamp(210px, 23vw, 300px); flex: 0 0 auto; margin: 0; overflow: hidden; border: 1px solid #c5a24e55; background: #0b0d0b; scroll-snap-align: start; }
+.work-video-card video { display: block; width: 100%; aspect-ratio: 9 / 16; background: #080a08; object-fit: contain; }
+.work-video-card figcaption { padding: 10px 12px; color: #c6d0c4; font-size: 10px; }
+
 .promise-section { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .92fr); align-items: center; gap: 7%; max-width: 1200px; margin: 0 auto; padding: 96px 7%; }
 .promise-copy { max-width: 620px; margin-inline: auto; }
 .promise-owner { display: flex; width: 100%; justify-content: center; }
@@ -398,6 +409,10 @@ h1 em, h2 em { color: #d2b15d; }
 .optional-label { display: inline; color: #9ba49b; font-size: 9px; font-weight: 400; }
 
 @media (max-width: 650px) {
+  .work-videos-section { padding: 62px 0 68px; }
+  .work-videos-section .bathroom-gallery-heading { align-items: flex-start; flex-direction: column; gap: 15px; margin-bottom: 22px; padding-inline: 22px; }
+  .work-video-track { gap: 12px; padding-inline: 22px; }
+  .work-video-card { width: min(70vw, 270px); }
   .faq-section { padding: 62px 22px; }
   .faq-heading { margin-bottom: 20px; }
   .faq-item summary { font-size: 12px; }
